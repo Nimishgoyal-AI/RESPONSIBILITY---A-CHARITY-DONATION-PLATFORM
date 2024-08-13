@@ -1,0 +1,130 @@
+
+<html>
+<head>
+  <title>Raise - Responsibility</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.webp">
+  <link rel="stylesheet" href="/raiseCharityform.css" />
+  <script>function validateform() {
+
+      // var cnamereg=/^[a-zA-Z\s]+$/g;
+      var Cname = document.getElementById('Cname').value;
+      if (Cname == "") {
+        alert('Kindly Enter a Charity Name');
+        return false;
+      }
+
+      var purpose = document.getElementById('purp').value;
+      if (purpose == "") {
+        alert('Kindly Enter the purpose of Charity');
+        return false;
+      }
+
+      var jsfounder = document.getElementById('Founder').value;
+      // var founderreg=/^[a-zA-Z\s]+$/g;
+      if (jsfounder == "") {
+        alert('Kindly Enter Your Name');
+        return false;
+      }
+
+      // Purpose can have anything no need to validate
+
+      var filepath = document.getElementById('cimg').value;
+
+      var allowedextensions = /(\.jpg|\.jpeg|\.png|\.webp|\.gif)$/i;
+
+      if (!allowedextensions.exec(filepath)) {
+        alert('Invalid File Type');
+        return false;
+      }
+
+    }
+  </script>
+
+</head>
+
+<body>
+  
+  <header>
+    <nav class="n">
+        <ul>
+            <span>
+                <li><img src="Images/favicon.webp" alt=""></li>
+                <li class="l1"><a href="/"> &nbsp;&nbsp;Responsibility</a></li>
+                <div style="width: 580px;"></div>
+                
+                <!-- button new wala -->
+                <div class=" Header_h_btnwrapper__28HTp">
+                    <button class="secondary_cta">
+                      <a href = "/display" style="text-decoration: none; color: #222;">Check Donations</a>
+                    </button>
+                    <div style="width: 10px;"></div>
+                    <button class="primary_cta">
+                      <a href = "/logout" style="text-decoration: none; color:#fff;">Logout</a>
+                    </button>
+                </div>
+            </span>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="form11">
+    <form action="/raise" name="f1" id="f1" method="POST" enctype="multipart/form-data"
+      onsubmit="return validateform()">
+      <fieldset>
+        
+        <legend>Raise Charity</legend>
+        <label class="s11" id="1" for="">Name of the Charity</label>
+        <input class="t12" type="text" id="Cname" name="Cname" placeholder="Enter Name of the Charity...">
+        <br /><br />
+        <label class="s11" id="2" for="">Purpose</label>
+        <input class="t12" type="textarea" id="purp" name="purp" placeholder="Enter Purpose">
+        <br><br />
+
+        <label class="s11" id="3" for="">Founder</label>
+        <input class="t12" type="text" placeholder="Enter Your Name..." id="Founder" name="Founder">
+        <br><br />
+        <label class="s11" id="4">Charity Cover Image</label>&nbsp;&nbsp;&nbsp;
+        <input type="file" id="cimg" name="image" value="" required><br>
+
+      </fieldset>
+      <br>
+      <input class="b11" name="submitbut" type="submit" value="Create">
+
+    </form>
+  </div>
+
+
+
+
+
+  <footer>
+    <div class="part4-1">
+      <img src="Images/favicon.webp" alt="">
+      <span>&nbsp;&nbsp;Responsibility</span>
+      <p>
+        Responsibility is the community-focused nonprofit donor management software built to deliver a better giving
+        experience and help organizations thrive.
+      </p>
+    </div>
+    <div class="part4-2">
+      <table border="0px" cellspacing="1px" align="right">
+        <tr class="td2">
+          <td><a href="#"><img style="padding-left:0px;" src="Images/l1.jpg" alt="Facebook"></a>
+            <a href="#"><img style="padding-left:0px;" src="Images/l2.png" alt="Twitter"></a>
+            <a href="#"><img style="padding-left:0px;" src="Images/l3.png" alt="Linked In">
+          </td>
+        </tr>
+        <tr class="td1">
+          <td><a href="#">Privacy Policy</a> <a href="#">Security Policy</a> <a href="#">Openness</a> <a
+              href="#">GDPR</a></td>
+        </tr>
+        <tr class="td3">
+          <td>Copyright © 2024 Responsibility® All Rights Reserved</td>
+        </tr>
+      </table>
+    </div>
+
+  </footer>
+</body>
+
+</html>

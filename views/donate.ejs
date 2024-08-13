@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate - Responsibility</title>
+  <link rel="icon" type="image/x-icon" href="Images/favicon.webp">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gHqgIA1ty0Yp3ylja9lD6ZkoUMtO9aE6p5aFg4u1lqk17Dc8FqIIT4K5AMxK8ZGU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/charitiesdisplay.css" >
+  <style>
+
+    
+    
+
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <nav class="n">
+      <ul>
+        <span>
+          <li><img src="Images/favicon.webp" alt=""></li>
+          <li class="l1"><a href="/"> &nbsp;&nbsp;Responsibility</a></li>
+        </span>
+      </ul>
+          <div class=" Header_h_btnwrapper__28HTp">
+            <button class="secondary_cta">
+              <a href = "/raise" style="text-decoration: none; color: #222;">Raise a Charity</a>
+            </button>
+            <div style="width: 10px;"></div>
+            <button class="primary_cta">
+              <a href = "/login" style="text-decoration: none; color:#fff;">Login</a>
+            </button>
+          </div>
+      
+    </nav>
+  </header>
+  <!-- banner flex donate page -->
+    <div class="BrowseFundraiser_banner_wrapper__I48Td undefined">
+      <div class="BrowseFundraiser_banner_content_wrapper__tBbxx">
+        <div>
+          <p class="BrowseFundraiser_bf_heading__1E5q0">
+            Hello, Changemaker!
+          </p>
+          <p class="BrowseFundraiser_bf_subheading__gCL6F">
+            Ready to make an impact? Donate to make a difference! 
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <div class="container mt-5">
+    <h1 class="text-center charity-line">
+      Choose a Charity to Support <hr>
+    </h1>
+    
+    <div class="row">
+      <% charities.forEach(function(charity) { %>
+        <div class="charity-card">
+            <!-- <% console.log(charity.img) %>  -->
+            <img src="/uploads/<%= charity.img %>" alt="<%= charity.chname %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= charity.chname %></h5>
+              <p class="card-text">Purpose: <%= charity.purpose %></p>
+              <p class="card-text">Founder: <%= charity.fname %></p>
+
+              <form action="/donateForm" method="get">
+                <input type="hidden" name="chid" value="<%= charity.chid %>">
+                <button type="submit" class="btn btn-primary donate-button">Donate</button>
+              </form>
+              
+            </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <footer>
+    <div class="part4-1">
+      <img src="Images/favicon.webp" alt="">
+      <span>&nbsp;&nbsp;Responsibility</span>
+      <p>Responsibility is the community-focused nonprofit donor management software built to deliver a better giving experience and help organizations thrive.</p>
+    </div>
+    <div class="part4-2">
+      <table border="0px" cellspacing="1px" align="right">
+        <tr class="td2">
+          <td>
+            <a href="#"><img src="Images/l1.jpg" alt="Facebook"></a>
+            <a href="#"><img src="Images/l2.png" alt="Twitter"></a>
+            <a href="#"><img src="Images/l3.png" alt="Linked In">
+          </td>
+        </tr>
+        <tr class="td1">
+          <td>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Security Policy</a>
+            <a href="#">Openness</a>
+            <a href="#">GDPR</a>
+          </td>
+        </tr>
+        <tr class="td3">
+          <td>Copyright © 2024 Responsibility® All Rights Reserved</td>
+        </tr>
+      </table>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const textItems = document.querySelectorAll('.BrowseFundraiser_bf_heading__1E5q0');
+    let delay = 0;
+    
+    textItems.forEach(item => {
+        setTimeout(() => {
+            item.style.opacity = 1;
+        }, delay);
+        delay += 10000; // Change this value to adjust timing
+      });
+    });
+  </script>
+</body>
+</html>

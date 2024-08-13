@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donate - Responsibility</title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.webp">
+    <link rel="stylesheet" href="/donateform.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="n">
+        <ul>
+          <span>
+            <li><img src="Images/favicon.webp" alt=""></li>
+            <li class="l1"><a href="index.html"> &nbsp;&nbsp;Responsibility</a></li>
+          </span>
+        </ul>
+            <div class=" Header_h_btnwrapper__28HTp">
+              <button class="secondary_cta">
+                <a href = "/register" style="text-decoration: none; color: #222;">Register</a>
+              </button>
+              <div style="width: 10px;"></div>
+              <button class="primary_cta">
+                <a href = "/login" style="text-decoration: none; color:#fff;">Login</a>
+              </button>
+            </div>
+        
+      </nav>
+    </header>
+    <br><br><br><br><br><br><br><br>
+    <div class="formdiv">
+      <br />
+      <form action="/submitDonation" method="POST">
+        <input type="hidden" name="chid" value="<%= charity.chid %>">
+        <label for="Dname">Donor Name</label>
+        <input type="text" id="Dname" name="dName" size="90px" placeholder="Donor Name" required /><br />
+        
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" size="90px" placeholder="Age" required /><br />
+        
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="gender" size="90px" placeholder="Gender" required /><br />
+        
+        <label for="num">Contact Number</label>
+        <input size="90px" type="text" id="num" name="contact" placeholder="ex:01xxxxxxxxx" required /><br />
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" size="90px" placeholder="Email" required /><br />
+        
+        <label for="nationality">Nationality</label>
+        <input type="text" id="nationality" name="nationality" size="90px" placeholder="Nationality" required /><br />
+        
+        <label for="payty">Payment Type</label>
+        <input type="text" id="payty" name="paymentType" size="90px" placeholder="Payment Type" required /><br />
+        
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" size="90px" placeholder="Amount" required /><br />
+        
+        <button type="submit">Add my payment</button><br />
+      </form>
+    </div> 
+    
+    <footer>
+      <div class="part4-1">
+        <img src="Images/favicon.webp" alt="">
+        <span>&nbsp;&nbsp;Responsibility</span>
+        <p>
+            Responsibility is the community-focused nonprofit donor management software built to deliver a better giving experience and help organizations thrive.
+        </p>
+      </div>
+      <div class="part4-2">
+        <table border="0px" cellspacing="1px" align="right" >
+          <tr class="td2">
+            <td>
+              <a href="#"><img  style="padding-left:0px;" src="Images/l1.jpg" alt="Facebook"></a> 
+              <a href="#"><img  style="padding-left:0px;" src="Images/l2.png" alt="Twitter"></a>
+              <a href="#"><img  style="padding-left:0px;" src="Images/l3.png" alt="Linked In"></td>
+          </tr>
+          <tr class="td1">
+            <td><a href="#">Privacy Policy</a> <a href="#">Security Policy</a> <a href="#">Openness</a> <a href="#">GDPR</a></td>
+          </tr>
+          <tr class="td3">
+            <td>Copyright © 2024 Responsibility® All Rights Reserved</td>
+          </tr>
+        </table>
+      </div>
+    </footer>
+  </body>
+</html>

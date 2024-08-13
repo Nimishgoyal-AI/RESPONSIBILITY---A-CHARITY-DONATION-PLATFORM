@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Donations</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Donations for Charities Created by <%= user %></h1>
+  </header>
+  <main>
+    <% charities.forEach(charity => { %>
+      <section>
+        <h2><%= charity.chName %></h2>
+        <table>
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Donor Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Nationality</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% charity.donations.forEach((donation, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= donation.dname %></td>
+                <td><%= donation.age %></td>
+                <td><%= donation.gender %></td>
+                <td><%= donation.nationality %></td>
+                <td><%= donation.contact %></td>
+                <td><%= donation.email %></td>
+                <td><%= donation.amount %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <h3>Total Amount Collected: <%= charity.totalAmount %></h3>
+      </section>
+    <% }); %>
+  </main>
+</body>
+</html>
