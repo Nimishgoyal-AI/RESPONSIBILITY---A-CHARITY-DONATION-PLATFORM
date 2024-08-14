@@ -10,13 +10,6 @@ import session from "express-session";
 import env from "dotenv";
 import multer from "multer";
 //
-import pgSession from "connect-pg-simple"; 
-const PgSession = pgSession(session);  
-
-const sessionStore = new PgSession({  
-  pool: db, // Use your existing database pool  
-  tableName: 'session' // Optional table name; defaults to 'session'  
-}); 
 //
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -29,15 +22,9 @@ env.config();
 
 app.use(
   session({
-    // secret: "TOPSECRETWORD",
-    // resave: true,
-    // saveUninitialized: true,
-
-    store: sessionStore,  
-    secret: "TOPSECRETWORD", // Change this to a more secure random secret in production  
-    resave: false,  
-    saveUninitialized: false,  
-    cookie: { secure: false },
+    secret: "TOPSECRETWORD",
+    resave: true,
+    saveUninitialized: true,
   })
 );
 
