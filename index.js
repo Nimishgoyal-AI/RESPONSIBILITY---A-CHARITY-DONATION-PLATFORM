@@ -207,21 +207,45 @@ app.get('/display', async (req, res) => {
 });
 
 // donate page from index.html wala page
+// app.get("/donate", async (req, res) => {
+//   try {
+//     const result = await db.query("SELECT * FROM raise");
+//     const charities = result.rows.map(charity => {
+//       // Ensure img is a buffer and convert to string
+//       if (Buffer.isBuffer(charity.img)) {
+//         charity.img = charity.img.toString('utf-8');
+//       }
+//       return charity;
+//     });
+
+//     res.render("donate.ejs", { charities });
+//   } catch (err) {
+//     console.error(err);
+//     res.send("Error fetching charities.");
+//   }
+// });
 app.get("/donate", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM raise");
     const charities = result.rows.map(charity => {
-      // Ensure img is a buffer and convert to string
-      if (Buffer.isBuffer(charity.img)) {
-        charity.img = charity.img.toString('utf-8');
+      // Assuming the image filename is stored as a hex string, decode it
+      if (typeof charity.img === 'string' && charity.img.startsWith('\\x')) {
+        // Remove the `\x` prefix and convert to a string
+        const hexString = charity.img.replace(/\\x/g, '');
+        const buffer = Buffer.from(hexString, 'hex');
+        
+        // Convert the Buffer back to the filename string
+        charity.img = buffer.toString('utf-8');
       }
+
       return charity;
     });
 
+    // Pass the processed charities to your front-end
     res.render("donate.ejs", { charities });
   } catch (err) {
-    console.error(err);
-    res.send("Error fetching charities.");
+    console.error("Error fetching charities:", err);
+    res.status(500).send("Server error");
   }
 });
 
