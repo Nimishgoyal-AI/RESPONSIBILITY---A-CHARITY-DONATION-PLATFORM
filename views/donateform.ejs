@@ -27,38 +27,59 @@
       </nav>
     </header>
     <br><br><br><br><br><br><br><br>
-    <div class="formdiv">
-      <br />
-      <form action="/submitDonation" method="POST">
-        <input type="hidden" name="chid" value="<%= charity.chid %>">
-        <label for="Dname">Donor Name</label>
-        <input type="text" id="Dname" name="dName" size="90px" placeholder="Donor Name" required /><br />
-        
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age" size="90px" placeholder="Age" required /><br />
-        
-        <label for="gender">Gender</label>
-        <input type="text" id="gender" name="gender" size="90px" placeholder="Gender" required /><br />
-        
-        <label for="num">Contact Number</label>
-        <input size="90px" type="text" id="num" name="contact" placeholder="ex:01xxxxxxxxx" required /><br />
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" size="90px" placeholder="Email" required /><br />
-        
-        <label for="nationality">Nationality</label>
-        <input type="text" id="nationality" name="nationality" size="90px" placeholder="Nationality" required /><br />
-        
-        <label for="payty">Payment Type</label>
-        <input type="text" id="payty" name="paymentType" size="90px" placeholder="Payment Type" required /><br />
-        
-        <label for="amount">Amount</label>
-        <input type="number" id="amount" name="amount" size="90px" placeholder="Amount" required /><br />
-        
-        <button type="submit">Add my payment</button><br />
-      </form>
-    </div> 
+    <div class="form11">
+      <form action="/submitDonation" name="f1" id="f1" method="POST">
+        <fieldset>
+          <legend>Donate to Charity</legend>
+          <input type="hidden" name="chid" value="<%= charity.chid %>">
     
+          <div class="form-group">
+            <label for="Dname">Donor Name</label>
+            <input type="text" id="Dname" name="dName" placeholder="Enter Donor Name..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter Age..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" placeholder="Enter Gender..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="num">Contact Number</label>
+            <input type="text" id="num" name="contact" placeholder="Enter Contact Number..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="nationality">Nationality</label>
+            <input type="text" id="nationality" name="nationality" placeholder="Enter Nationality..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="payty">Payment Type</label>
+            <input type="text" id="payty" name="paymentType" placeholder="Enter Payment Type..." required>
+          </div>
+    
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter Amount..." required>
+          </div>
+        </fieldset>
+        <br>
+        <input class="b11" type="submit" value="Add my payment">
+      </form>
+    </div>
+    
+    
+
     <footer>
       <div class="part4-1">
         <img src="Images/favicon.webp" alt="">
