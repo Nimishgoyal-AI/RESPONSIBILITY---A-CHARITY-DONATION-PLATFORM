@@ -55,9 +55,9 @@ app.use(passport.session());
 
 const db = new pg.Client({
   user: "responsibility_user",
-  host: "cqtqopdds78s73dmpm00-a.oregon-postgres.render.com",
-  database: "responsibility",
-  password: "HcDi1Cx6CNDLnkgcPlGKffiXdRgcf5IH",
+  host: "cslj643qf0us738u3ugg-a.oregon-postgres.render.com",
+  database: "responsibility_4fhi",
+  password: "IxybLBC1HKGH9cOzRulNybY8rZizdWXj",
   port: 5432,
   ssl: {
     rejectUnauthorized: false, 
