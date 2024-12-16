@@ -54,15 +54,26 @@ app.use(passport.session());
 
 
 const db = new pg.Client({
-  user: "responsibility_user",
-  host: "cslj643qf0us738u3ugg-a.oregon-postgres.render.com",
-  database: "responsibility_4fhi",
-  password: "IxybLBC1HKGH9cOzRulNybY8rZizdWXj",
+  user: "neondb_owner",
+  host: "ep-shiny-block-a6gyr5on-pooler.us-west-2.aws.neon.tech",
+  database: "neondb",
+  password: "Rqgz2vtT0VGQ",
   port: 5432,
   ssl: {
     rejectUnauthorized: false, 
   },
 });
+
+// const db = new pg.Client({
+//   user: "responsibility_user",
+//   host: "cslj643qf0us738u3ugg-a.oregon-postgres.render.com",
+//   database: "responsibility_4fhi",
+//   password: "IxybLBC1HKGH9cOzRulNybY8rZizdWXj",
+//   port: 5432,
+//   ssl: {
+//     rejectUnauthorized: false, 
+//   },
+// });
 
 db.connect();
 
